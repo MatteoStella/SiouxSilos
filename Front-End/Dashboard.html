@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30" />
+    <link href="Style1.css" rel="stylesheet">
+    <title>Dashboard</title>
+
+    <style>
+        .container {
+            margin: 0 auto;
+        }
+
+        .title {
+            align-items: center;
+            justify-content: center;
+            margin-left: 47%;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .boxDx {
+            flex: 2;
+        }
+
+        .boxSx {
+            flex: 1;
+        }
+
+        .silos {
+            height: 100%;
+            border: 3px solid black;
+        }
+
+        h2, h3 {
+            color: whitesmoke;
+        }
+        table{
+            border: 1px solid whitesmoke;
+            margin: 3px;
+        }
+    </style>
+
+<script>
+
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://localhost:44387/Silos/1', true)
+request.setRequestHeader('Content-Type', 'application/xml'); 
+request.send() 
+request.onload = function () {
+    
+    var data = JSON.parse(this.response)
+
+    if (request.status >= 200 && request.status < 400) {
+        document.getElementById('T1').innerHTML=data.temperatura+' °C';
+        document.getElementById('H1').innerHTML=data.umidita+' %';
+        document.getElementById('P1').innerHTML=data.pressione+' Pa';
+        document.getElementById('L1').innerHTML=data.livello;
+        document.getElementById('U1').innerHTML=data.data;
+            silos1=new Array();
+            for (var i = 1; i <= 8; i++) {
+                if(i<=data.livello){
+                    silos1[i]=true;
+                }else{
+                    silos1[i]=false;
+                }
+            }
+            for (var i = 1; i <= 8; i++) {
+                if (silos1[i] == true) {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "green";
+                }
+                else {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "lightgray";
+                }
+            }
+    } else {
+        console.log('error')
+    }
+}
+
+            var request2 = new XMLHttpRequest()
+            request2.open('GET', 'https://localhost:44387/Silos/2', true)
+            request2.setRequestHeader('Content-Type', 'application/xml'); 
+            request2.send() 
+            request2.onload = function () {
+                
+                var data = JSON.parse(this.response)
+
+                if (request2.status >= 200 && request2.status < 400) {
+                    document.getElementById('T2').innerHTML=data.temperatura+' °C';
+                    document.getElementById('H2').innerHTML=data.umidita+' %';
+                    document.getElementById('P2').innerHTML=data.pressione+' Pa';
+                    document.getElementById('L2').innerHTML=data.livello;
+                    document.getElementById('U2').innerHTML=data.data;
+                        silos2=new Array();
+                        for (var i = 9; i <= 16; i++) {
+                            if(i<=data.livello+8){
+                                silos2[i]=true;
+                            }else{
+                                silos2[i]=false;
+                            }
+                        }
+                        for (var i = 9; i <= 16; i++) {
+                            if (silos2[i] == true) {
+                                var id = document.getElementById(i);
+                                id.style.backgroundColor = "green";
+                            }
+                            else {
+                                var id = document.getElementById(i);
+                                id.style.backgroundColor = "lightgray";
+                            }
+                        }
+                    } else {
+                        console.log('error')
+                    }
+                }
+
+var request3 = new XMLHttpRequest()
+request3.open('GET', 'https://localhost:44387/Silos/3', true)
+request3.setRequestHeader('Content-Type', 'application/xml'); 
+request3.send() 
+request3.onload = function () {
+    
+    var data = JSON.parse(this.response)
+
+    if (request3.status >= 200 && request3.status < 400) {
+        document.getElementById('T3').innerHTML=data.temperatura+' °C';
+        document.getElementById('H3').innerHTML=data.umidita+' %';
+        document.getElementById('P3').innerHTML=data.pressione+' Pa';
+        document.getElementById('L3').innerHTML=data.livello;
+        document.getElementById('U3').innerHTML=data.data;
+            silos3=new Array();
+            for (var i = 17; i <= 24; i++) {
+                if(i<=data.livello+16){
+                    silos3[i]=true;
+                }else{
+                    silos3[i]=false;
+                }
+            }
+            for (var i = 17; i <= 24; i++) {
+                if (silos3[i] == true) {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "green";
+                }
+                else {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "lightgray";
+                }
+            }
+    } else {
+        console.log('error')
+    }
+}
+
+            var request4 = new XMLHttpRequest()
+            request4.open('GET', 'https://localhost:44387/Silos/4', true)
+            request4.setRequestHeader('Content-Type', 'application/xml'); 
+            request4.send() 
+            request4.onload = function () {
+                
+                var data = JSON.parse(this.response)
+
+                if (request4.status >= 200 && request4.status < 400) {
+                    document.getElementById('T4').innerHTML=data.temperatura+' °C';
+                    document.getElementById('H4').innerHTML=data.umidita+' %';
+                    document.getElementById('P4').innerHTML=data.pressione+' Pa';
+                    document.getElementById('L4').innerHTML=data.livello;
+                    document.getElementById('U4').innerHTML=data.data;
+                    silos4=new Array();
+                    for (var i = 25; i <= 32; i++) {
+                        if(i<=data.livello+24){
+                            silos4[i]=true;
+                        }else{
+                            silos4[i]=false;
+                        }
+                    }
+                    for (var i = 25; i <= 32; i++) {
+                        if (silos4[i] == true) {
+                            var id = document.getElementById(i);
+                            id.style.backgroundColor = "green";
+                        }
+                        else {
+                            var id = document.getElementById(i);
+                            id.style.backgroundColor = "lightgray";
+                        }
+                    }
+                } else {
+                    console.log('error')
+                }
+            }
+
+var request5 = new XMLHttpRequest()
+request5.open('GET', 'https://localhost:44387/Silos/5', true)
+request5.setRequestHeader('Content-Type', 'application/xml'); 
+request5.send() 
+request5.onload = function () {
+    
+    var data = JSON.parse(this.response)
+
+    if (request5.status >= 200 && request5.status < 400) {
+        document.getElementById('T5').innerHTML=data.temperatura+' °C';
+        document.getElementById('H5').innerHTML=data.umidita+' %';
+        document.getElementById('P5').innerHTML=data.pressione+' Pa';
+        document.getElementById('L5').innerHTML=data.livello;
+        document.getElementById('U5').innerHTML=data.data;
+        silos5=new Array();
+            for (var i = 33; i <= 40; i++) {
+                if(i<=data.livello+32){
+                    silos5[i]=true;
+                }else{
+                    silos5[i]=false;
+                }
+            }
+            for (var i = 33; i <= 40; i++) {
+                if (silos5[i] == true) {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "green";
+                }
+                else {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "lightgray";
+                }
+            }
+    } else {
+        console.log('error')
+    }
+}
+
+            var request6 = new XMLHttpRequest()
+            request6.open('GET', 'https://localhost:44387/Silos/6', true)
+            request6.setRequestHeader('Content-Type', 'application/xml'); 
+            request6.send() 
+            request6.onload = function () {
+                
+                var data = JSON.parse(this.response)
+
+                if (request6.status >= 200 && request6.status < 400) {
+                    document.getElementById('T6').innerHTML=data.temperatura+' °C';
+                    document.getElementById('H6').innerHTML=data.umidita+' %';
+                    document.getElementById('P6').innerHTML=data.pressione+' Pa';
+                    document.getElementById('L6').innerHTML=data.livello;
+                    document.getElementById('U6').innerHTML=data.data;
+                    silos6=new Array();
+                    for (var i = 41; i <= 48; i++) {
+                        if(i<=data.livello+40){
+                            silos6[i]=true;
+                        }else{
+                            silos6[i]=false;
+                        }
+                    }
+                    for (var i = 41; i <= 48; i++) {
+                        if (silos6[i] == true) {
+                            var id = document.getElementById(i);
+                            id.style.backgroundColor = "green";
+                        }
+                        else {
+                            var id = document.getElementById(i);
+                            id.style.backgroundColor = "lightgray";
+                        }
+                    }
+                } else {
+                    console.log('error')
+                }
+            }
+
+var request7 = new XMLHttpRequest()
+request7.open('GET', 'https://localhost:44387/Silos/7', true)
+request7.setRequestHeader('Content-Type', 'application/xml'); 
+request7.send() 
+request7.onload = function () {
+    
+    var data = JSON.parse(this.response)
+
+    if (request7.status >= 200 && request7.status < 400) {
+        document.getElementById('T7').innerHTML=data.temperatura+' °C';
+        document.getElementById('H7').innerHTML=data.umidita+' %';
+        document.getElementById('P7').innerHTML=data.pressione+' Pa';
+        document.getElementById('L7').innerHTML=data.livello;
+        document.getElementById('U7').innerHTML=data.data;
+        silos7=new Array();
+            for (var i = 49; i <= 56; i++) {
+                if(i<=data.livello+48){
+                    silos7[i]=true;
+                }else{
+                    silos7[i]=false;
+                }
+            }
+            for (var i = 49; i <= 56; i++) {
+                if (silos7[i] == true) {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "green";
+                }
+                else {
+                    var id = document.getElementById(i);
+                    id.style.backgroundColor = "lightgray";
+                }
+            }
+    } else {
+        console.log('error')
+    }
+}
+
+
+        var rAllarm = new XMLHttpRequest()
+
+        rAllarm.open('GET', 'https://localhost:44387/api/Alarm', true)
+        rAllarm.setRequestHeader('Content-Type', 'application/xml'); 
+        rAllarm.send() 
+        rAllarm.onload = function () {
+            
+            var data = JSON.parse(this.response)          
+
+            if (request.status >= 200 && request.status < 400) {
+                for (let index = 0; index < data.length; index++) {
+                    if(data[index].idSilos != undefined){
+                        confirm('Silos '+data[index].idSilos+'  '+data[index].descrizione);
+                        var rAllarm1 = new XMLHttpRequest()
+                        rAllarm1.open('DELETE', 'https://localhost:44387/api/Alarm?id='+data[index].id, true)
+                        rAllarm1.setRequestHeader('Content-Type', 'application/xml'); 
+                        rAllarm1.send() 
+                    }                                   
+                }
+            } else {
+                console.log('error alarm')
+            }
+        }
+  
+</script>
+
+</head>
+
+<body>
+    
+    
+<div class="container">
+
+    <div id="PS flex" class="box-flex-box">
+        <div class="flex boxDx"><h1 style="color:rgb(11, 133, 247); margin-top: 20px; font-size: 70px;">SiouxSilos</h1></div>
+        <div class="flex boxSx">
+            <a href="Admin.html"><button type="submit">Change Allert Settings</button></a>
+        </div>
+    </div>
+    <br>
+    <div class="title"><h3>Silos n° 1</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                '<div id="8">8</div>',
+                '<div id="7">7</div>',
+                '<div id="6">6</div>',
+                '<div id="5">5</div>',
+                '<div id="4">4</div>',
+                '<div id="3">3</div>',
+                '<div id="2">2</div>',
+                '<div id="1">1</div>',
+                '</div>');
+        </script>
+        <!--<div class="silos">
+            <div id="8">8</div>
+            <div id="7">7</div>
+            <div id="6">6</div>
+            <div id="5">5</div>
+            <div id="4">4</div>
+            <div id="3">3</div>
+            <div id="2">2</div>
+            <div id="1">1</div>
+        </div>-->
+        <div class="flex boxSx ">
+            <table class="table table-stripped" id="table1">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+                </tr>
+                <tr>
+                    <td id="T1" style="font-size: 25px;"></td>
+                    <td id="H1" style="font-size: 25px;"></td>
+                    <td id="P1" style="font-size: 25px;"></td>
+                    <td id="L1" style="font-size: 25px;"></td>
+                    <td id="U1" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 2 </h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                '<div id="16">8</div>',
+                '<div id="15">7</div>',
+                '<div id="14">6</div>',
+                '<div id="13">5</div>',
+                '<div id="12">4</div>',
+                '<div id="11">3</div>',
+                '<div id="10">2</div>',
+                '<div id="9">1</div></div>');
+        </script>
+        <div class="flex boxSx ">
+            <table class="table table-striped ">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T2" style="font-size: 25px;"></td>
+                    <td id="H2" style="font-size: 25px;"></td>
+                    <td id="P2" style="font-size: 25px;"></td>
+                    <td id="L2" style="font-size: 25px;"></td>
+                    <td id="U2" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 3</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                ' <div id="24">8</div>',
+                '<div id="23">7</div>',
+                '<div id="22">6</div>',
+                '<div id="21">5</div>',
+                '<div id="20">4</div>',
+                '<div id="19">3</div>',
+                '<div id="18">2</div>',
+                '<div id="17">1</div></div>');
+        </script>
+        <div class="flex boxSx ">
+            <table class="table table-striped ">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+                </tr>
+                <tr>
+                    <td id="T3" style="font-size: 25px;"></td>
+                    <td id="H3" style="font-size: 25px;"></td>
+                    <td id="P3" style="font-size: 25px;"></td>
+                    <td id="L3" style="font-size: 25px;"></td>
+                    <td id="U3" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 4</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                ' <div id="32">8</div>',
+                '<div id="31">7</div>',
+                '<div id="30">6</div>',
+                '<div id="29">5</div>',
+                '<div id="28">4</div>',
+                '<div id="27">3</div>',
+                '<div id="26">2</div>',
+                '<div id="25">1</div></div>');
+        </script>
+        <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T4" style="font-size: 25px;"></td>
+                    <td id="H4" style="font-size: 25px;"></td>
+                    <td id="P4" style="font-size: 25px;"></td>
+                    <td id="L4" style="font-size: 25px;"></td>
+                    <td id="U4" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 5</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                ' <div id="40">8</div>',
+                '<div id="39">7</div>',
+                '<div id="38">6</div>',
+                '<div id="37">5</div>',
+                '<div id="36">4</div>',
+                '<div id="35">3</div>',
+                '<div id="34">2</div>',
+                '<div id="33">1</div></div>');
+        </script>
+        <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T5" style="font-size: 25px;"></td>
+                    <td id="H5" style="font-size: 25px;"></td>
+                    <td id="P5" style="font-size: 25px;"></td>
+                    <td id="L5" style="font-size: 25px;"></td>
+                    <td id="U5" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 6</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                '<div id="48">8</div>',
+                '<div id="47">7</div>',
+                '<div id="46">6</div>',
+                '<div id="45">5</div>',
+                '<div id="44">4</div>',
+                '<div id="43">3</div>',
+                '<div id="42">2</div>',
+                '<div id="41">1</div></div>');
+        </script>
+        <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th style="font-size: 17px;">Temperature</th>
+                    <th style="font-size: 17px;">Humidity</th>
+                    <th style="font-size: 17px;">Pressure</th>
+                    <th style="font-size: 17px;">Level</th>
+                    <th style="font-size: 17px;">Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T6" style="font-size: 25px;"></td>
+                    <td id="H6" style="font-size: 25px;"></td>
+                    <td id="P6" style="font-size: 25px;"></td>
+                    <td id="L6" style="font-size: 25px;"></td>
+                    <td id="U6" style="font-size: 25px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="title"><h3>Silos n° 7</h3></div>
+    <div class="flex boxDx">
+        <script>
+            document.write('<div class="silos">',
+                ' <div id="56">8</div>',
+                '<div id="55">7</div>',
+                '<div id="54">6</div>',
+                '<div id="53">5</div>',
+                '<div id="52">4</div>',
+                '<div id="51">3</div>',
+                '<div id="50">2</div>',
+                '<div id="49">1</div>');
+        </script>
+    </div>
+    <div class="flex boxSx ">
+        <table class="table table-striped">
+            <tr>
+                <th style="font-size: 17px;">Temperature</th>
+                <th style="font-size: 17px;">Humidity</th>
+                <th style="font-size: 17px;">Pressure</th>
+                <th style="font-size: 17px;">Level</th>
+                <th style="font-size: 17px;">Last update</th>
+
+            </tr>
+            <tr>
+                <td id="T7" style="font-size: 25px;"></td>
+                <td id="H7" style="font-size: 25px;"></td>
+                <td id="P7" style="font-size: 25px;"></td>
+                <td id="L7" style="font-size: 25px;"></td>
+                <td id="U7" style="font-size: 25px;"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+</body>
+
+</html>

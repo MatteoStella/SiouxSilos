@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ITS.DEVO.ECommerce.Web.wwwroot.js.site;
+    <link href="style.css" rel="stylesheet">
+    <!--<script type="text/javascript" src="scriptP2.js"></script>--> 
+    <title>Document</title>
+
+    <style>
+        .title {
+            align-items: center;
+            justify-content: center;
+            margin-left: 47%;
+        }
+        
+        .flex {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        
+        .boxDx {
+            flex:1;
+        }
+        
+        .boxSx {
+            flex: 2;
+        
+        }
+        .silos{
+            width: 500px;
+            height: 1000;
+            border-style :solid 2px ;
+            border-color: black;
+        }
+        .segmento{
+            width: 300px;
+            height: auto;
+            border-style :solid 2px ;
+            border-color: black;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="PS flex">
+        <h2>SiouxSilos</h2>
+        <input type="button" value="Start monitoring" onclick='GestioneLivelli()'/>
+    </div>
+    <a href=pag3.html></th><div class="title">Silos 1</div></a>
+    
+    <br>
+    <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="8">8</div>',
+            '<div id="7">7</div>',
+            '<div id="6">6</div>',
+            '<div id="5">5</div>',
+            '<div id="4">4</div>',
+            '<div id="3">3</div>',
+            '<div id="2">2</div>',
+            '<div id="1">1</div>');
+            
+               silos1 = new Array(sensore1 = true, sensore2 = true, sensore3 = false, sensore4 = false, sensore5= false, sensore6 = false, sensore7 = false, sensore8 = false);
+                var count=0;
+                for(var i = 0; i<8; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>     
+            <div class="flex boxSx ">
+            <table class="table table-striped ">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+                </tr>
+                <tr>
+                    <td id="T1">-</td>
+                    <td id="H1">-</td>
+                    <td id="P1">-</td>
+                    <td  value="5" id="L1">5</td>
+                    <td id="U1">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+     <th><a href=pag3.html></th><div class="title">Silos 2</div></a>
+     <br>
+     <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="16">8</div>',
+            '<div id="15">7</div>',
+            '<div id="14">6</div>',
+            '<div id="13">5</div>',
+            '<div id="12">4</div>',
+            '<div id="11">3</div>',
+            '<div id="10">2</div>',
+            '<div id="9">1</div>');
+            
+               silos1 = new Array(sensore9 = true, sensore10 = true, sensore11 = true, sensore12 = false, sensore13= false, sensore14 = false, sensore15 = false, sensore16 = false);
+                var count=8;
+                for(var i = 0; i<16; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>      
+<div class="flex boxSx ">
+            <table class="table table-striped ">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T2">-</td>
+                    <td id="H2">-</td>
+                    <td id="P2">-</td>
+                    <td id="L2">-</td>
+                    <td id="U2">-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <a href=pag3.html></th><div class="title">Silos 3</div></a>
+    <br>
+    <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="24">8</div>',
+            '<div id="23">7</div>',
+            '<div id="22">6</div>',
+            '<div id="21">5</div>',
+            '<div id="20">4</div>',
+            '<div id="19">3</div>',
+            '<div id="18">2</div>',
+            '<div id="17">1</div>');
+            
+               silos1 = new Array(sensore1 = true, sensore2 = true, sensore3 = false, sensore4 = false, sensore5= false, sensore6 = false, sensore7 = false, sensore8 = false);
+                var count=16;
+                for(var i = 0; i<8; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>     
+            <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T3">-</td>
+                    <td id="H3">-</td>
+                    <td id="P3">-</td>
+                    <td id="L3">-</td>
+                    <td id="U3">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+     <a href=pag3.html></th><div class="title">Silos 4</div></a>
+    <br>
+            <div class="flex boxDx">
+                <script>
+                document.write('<div class="silos">',
+                   ' <div id="32">8</div>',
+                    '<div id="31">7</div>',
+                    '<div id="30">6</div>',
+                    '<div id="29">5</div>',
+                    '<div id="28">4</div>',
+                    '<div id="27">3</div>',
+                    '<div id="26">2</div>',
+                    '<div id="25">1</div>');
+                    
+                       silos1 = new Array(sensore25 = true, sensore26 = true, sensore27 = false, sensore28 = false, sensore29= false, sensore30 = false, sensore31 = false, sensore32 = false);
+                        var count=24;
+                        for(var i = 0; i<8; i++){
+                           count++;
+                            if (silos1[i]==true)
+                            {
+                                var id = document.getElementById(count);
+                                id.style.backgroundColor="green";
+        
+                            }
+                            else{
+                                var id = document.getElementById(count);
+                                id.style.backgroundColor="lightgray";
+                            }
+                        }
+                /*    
+                        var l1 = document.get
+                     
+                        for(var i=l1;i>0;i--){
+                          var id=document.getElementById(i);
+                            id.style.backgroundColor ="green";
+                        }
+        */
+                    </script>
+                </div>     
+            <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T4">-</td>
+                    <td id="H4">-</td>
+                    <td id="P4">-</td>
+                    <td id="L4">-</td>
+                    <td id="U4">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+     <a href=pag3.html></th><div class="title">Silos 5</div></a>
+    <br>
+    <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="40">8</div>',
+            '<div id="39">7</div>',
+            '<div id="38">6</div>',
+            '<div id="37">5</div>',
+            '<div id="36">4</div>',
+            '<div id="35">3</div>',
+            '<div id="34">2</div>',
+            '<div id="33">1</div>');
+            
+               silos1 = new Array(sensore1 = true, sensore2 = true, sensore3 = false, sensore4 = false, sensore5= false, sensore6 = false, sensore7 = false, sensore8 = false);
+                var count=32;
+                for(var i = 0; i<8; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>     
+            <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T5">-</td>
+                    <td id="H5">-</td>
+                    <td id="P5">-</td>
+                    <td id="L5">-</td>
+                    <td id="U5">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+     <a href=pag3.html></th><div class="title">Silos 6</div></a>
+    <br>
+    <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="48">8</div>',
+            '<div id="47">7</div>',
+            '<div id="46">6</div>',
+            '<div id="45">5</div>',
+            '<div id="44">4</div>',
+            '<div id="43">3</div>',
+            '<div id="42">2</div>',
+            '<div id="41">1</div>');
+            
+               silos1 = new Array(sensore1 = true, sensore2 = true, sensore3 = false, sensore4 = false, sensore5= false, sensore6 = false, sensore7 = false, sensore8 = false);
+                var count=40;
+                for(var i = 0; i<8; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>     
+            <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T6">-</td>
+                    <td id="H6">-</td>
+                    <td id="P6">-</td>
+                    <td id="L6">-</td>
+                    <td id="U6">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+     <a href=pag3.html></th><div class="title">Silos 7</div></a>
+    <br>
+    <div class="flex boxDx">
+        <script>
+        document.write('<div class="silos">',
+           ' <div id="56">8</div>',
+            '<div id="55">7</div>',
+            '<div id="54">6</div>',
+            '<div id="53">5</div>',
+            '<div id="52">4</div>',
+            '<div id="51">3</div>',
+            '<div id="50">2</div>',
+            '<div id="49">1</div>');
+            
+               silos1 = new Array(sensore1 = true, sensore2 = true, sensore3 = false, sensore4 = false, sensore5= false, sensore6 = false, sensore7 = false, sensore8 = false);
+                var count=48;
+                for(var i = 0; i<8; i++){
+                   count++;
+                    if (silos1[i]==true)
+                    {
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="green";
+
+                    }
+                    else{
+                        var id = document.getElementById(count);
+                        id.style.backgroundColor="lightgray";
+                    }
+                }
+        /*    
+                var l1 = document.get
+             
+                for(var i=l1;i>0;i--){
+                  var id=document.getElementById(i);
+                    id.style.backgroundColor ="green";
+                }
+*/
+            </script>
+        </div>   
+            <div class="flex boxSx ">
+            <table class="table table-striped">
+                <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Level</th>
+                    <th>Last update</th>
+
+                </tr>
+                <tr>
+                    <td id="T7">-</td>
+                    <td id="H7">-</td>
+                    <td id="P7">-</td>
+                    <td id="L7">-</td>
+                    <td id="U7">-</td>
+                </tr>
+            </table>
+            </div>
+     </div>
+     <br>
+
+
+</body>
+
+</html>

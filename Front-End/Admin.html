@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="admin-style.css" rel="stylesheet">
+    <title>Admin settings</title>
+    <script>
+        function Warning(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://localhost:44387/api/WarningSettingController", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                IdSilos: document.getElementById("silosW").value,
+                Temperatura: document.getElementById("TemperatureW").innerHTML,
+                Umidita: document.getElementById("UmiditaW").innerHTML,
+                Pressione: document.getElementById("PressioneW").innerHTML
+            }));
+        }
+
+        function Alarm(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://localhost:44387/api/AlarmSettingController", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                IdSilos: document.getElementById("silosA").value,
+                Temperatura: document.getElementById("TemperatureA").innerHTML,
+                Umidita: document.getElementById("UmiditaA").innerHTML,
+                Pressione: document.getElementById("PressioneA").innerHTML
+            }));
+        }
+    </script>
+</head>
+<body>
+    <div class="box-flex">
+        <h1>Settings silos</h1>
+        <form method="post">
+        <div class="W">
+            <div class="box-selection-silos">
+                <label for="Silos"> Select Silos to change</label>
+                <select name="IdSilos" id="silosW">
+                    <option value="1">Silos n° 1</option>
+                    <option value="2">Silos n° 2</option>
+                    <option value="3">Silos n° 3</option>
+                    <option value="4">Silos n° 4</option>
+                    <option value="5">Silos n° 5</option>
+                    <option value="6">Silos n° 6</option>
+                    <option value="7">Silos n° 7</option>
+                </select>
+
+            </div>
+            <div id="TW">
+                <label>Temperature Warning (%)</label>
+                <input name="TemperatureW" type="number" value="5" min="1" max="100">
+
+            </div>
+            <div id="HW">
+                <label>Humidity Warning (%)</label>
+                <input name="UmiditaW" type="number" value="5" min="1" max="100" placeholder="%">
+            </div>
+            <div id="PW">
+                <label>Pressure Warning (%)</label>
+                <input name="PressioneW" type="number" value="5" min="1" max="100">
+
+            </div>
+            <input type="submit" value="Save WARNING settings" onclick="Warning()">
+        </div>
+        </form>
+<!--######################################################################################################-->
+        <form method="post">
+            <div class="A">
+                <div class="box-selection-silos">
+                    <label for="Silos"> Select Silos to change</label>
+                    <select name="Silos" id="silosA">
+                        <option value="1">Silos n° 1</option>
+                        <option value="2">Silos n° 2</option>
+                        <option value="3">Silos n° 3</option>
+                        <option value="4">Silos n° 4</option>
+                        <option value="5">Silos n° 5</option>
+                        <option value="6">Silos n° 6</option>
+                        <option value="7">Silos n° 7</option>
+
+                    </select>
+
+                </div>
+                <div id="TA">
+                    <label>Temperature Warning (%)</label>
+                    <input name="TemperatureA" type="number" value="10" min="1" max="100">
+
+                </div>
+                <div id="HA">
+                    <label>Humidity Warning (%)</label>
+                    <input name="UmiditaA" type="number" value="10" min="1" max="100">
+
+                </div>
+                <div id="PA">
+                    <label>Pressure Warning (%)</label>
+                    <input name="PressioneA" type="number" value="10" min="1" max="100">
+
+                </div>
+                <input type="submit" value="Save ALARM settings" onclick="Alarm()">
+            </div>
+        </form>
+        
+    </div>
+    <div class="buttom-link">
+        <a href="Dashboard.html"> <button type="submit"> Turn Back</button> </a>
+    </div>
+</body>
+
+</html>
+

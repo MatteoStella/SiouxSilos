@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style1.css" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        .box {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 500px;
+            background-image: url(Cattura.PNG);
+            background-repeat: no-repeat;
+            height: fit-content();
+            font-weight: 100;
+            background-position: right;
+        }
+
+        .bamba {
+            align-content: flex-end;
+            text-align: left;
+            border: hidden;
+            background-position: left;
+            width: 300px;
+        }
+
+    </style>
+<script>
+
+        var xhttp = new XMLHttpRequest()
+        xhttp.open('GET', 'https://localhost:44387/api/SilosGenerator', true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send();
+
+        /*function Check(){
+            var user = document.forms["login"]["Username"].value;
+            var psw = document.forms["login"]["Password"].value;
+            var json = JSON.stringify({"IdUser":user,"Password":psw,"Permission":0})
+
+            var xhttp = new XMLHttpRequest()
+            xhttp.open('POST', 'https://localhost:44387/api/User', true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.onreadystatechange  = function () {
+                var data = JSON.parse(this.response)
+                if (data.IsSuccessStatusCode) {
+                    return true;
+                } else {
+                    console.log('error')
+                    return false;
+                }
+            }
+            xhttp.send(json);
+        }*/
+</script>
+
+</head>
+
+<body>
+    <form name="login" method="post" action="Dashboard.html">
+        <div class="box">
+            
+            <div class="bamba">
+                 <div class="mb-3 ">
+                      <label for="exampleInputEmail1" class="form-label">Username</label>
+                      <input type="text" class="form-control" name="Username" required />
+                 </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="Password" required />
+                <div id="passwordHelpBlock" class="form-text">
+                    Your password must be 8-20 characters long, contain letters and numbers.
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    
+</body>
+
+</html>
